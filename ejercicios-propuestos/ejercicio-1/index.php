@@ -1,12 +1,12 @@
 <?php
     //Mensaje inicial
-    $mensaje = "Yo soy nones y tú eres pares, escoge un número del 1 al 5 a ver quién gana";
+    $mensaje = "Yo soy nones y tú eres pares, escribe o pulsa un número del 1 al 5 a ver quién gana";
     //Valor inicial
     $partida = false;
     //Clase inicial
     $clase = "";
-    //Si el usuario ha pulsado algún botón, hay partida
-    if (isset($_GET['numero'])){
+    //Si el usuario ha pulsado algún botón o ha escrito un número del 1 al 5, hay partida
+    if (isset($_GET['numero']) && $_GET['numero'] >= 1 && $_GET['numero'] <= 5){
         //Hay partida
         $partida = true;
         //Recojo el numero escogido por el usuario
@@ -50,12 +50,21 @@
         <p><?php echo $mensaje ?></p>
 
         <?php if (!$partida){ ?>
+            <!-- Formulario para los botones -->
             <form method="get" action="index.php">
                 <input type="submit" name="numero" value="1">
                 <input type="submit" name="numero" value="2">
                 <input type="submit" name="numero" value="3">
                 <input type="submit" name="numero" value="4">
                 <input type="submit" name="numero" value="5">
+            </form>
+            <!-- Formulario para el input number -->
+            <form method="get" action="index.php">
+                <div>
+                    <p>Escribe un número del 1 al 5 y pulsa Enviar:</p>
+                    <input type="number" min="1" max="5" step="1" name="numero">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
         <?php } else { ?>
             <a href="index.php">Pulsa aquí para volver a jugar</a>

@@ -18,3 +18,7 @@ input[type=submit]{
 .perder{
     background-color: darksalmon;
 }
+
+div{
+    margin-top: 20px;
+}
