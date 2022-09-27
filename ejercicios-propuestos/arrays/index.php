@@ -23,6 +23,22 @@ foreach ($meses as $numMes => $nombreMes){
 for ($i = 0; $i < 500; $i++){
     $array[$i] = $i;
 }*/
+
+//Array para el ejercicio 3 */
+$ejercicio3 = [];
+for ($i = 0; $i <= 100; $i++){
+    $ejercicio3[$i] = $i;
+}
+$indice1 = rand(0,100); //Entero aleatorio entre 0 y 100 incluidos
+$indice2 = rand(0,100);
+$indice3 = rand(0,100);
+
+$num1 = $ejercicio3[$indice1];
+$num2 = $ejercicio3[$indice2];
+$num3 = $ejercicio3[$indice3];
+
+$media = ($num1 + $num2 + $num3) / 3;
+
 ?>
 
 <html lang="es">
@@ -41,6 +57,7 @@ for ($i = 0; $i < 500; $i++){
         <p>
             <?php echo "Mi cumpleaños es el ". $anyo[6][15] ?>
         </p>
+        <hr>
         <h1>Ejercicio propuesto 2</h1>
         <p>
             Crea una función que muestre en pantalla una tabla con el contenido del array superglobal de PHP $_SERVER,
@@ -59,5 +76,16 @@ for ($i = 0; $i < 500; $i++){
                 </tr>
             <?php } ?>
         </table>
+        <hr>
+        <hr>
+        <h1>Ejercicio propuesto 3</h1>
+        <p>
+            Crea una función que, dado un array de enteros de 0 a 100, extraiga 3 elementos al azar y devuelva la media
+            de ellos en formato "La media de num1, num2 y num3 es resultado".
+        </p>
+        <hr>
+        <p>
+            <?php echo "La media de $num1, $num2 y $num3 es $media" ?>
+        </p>
     </body>
 </html>
