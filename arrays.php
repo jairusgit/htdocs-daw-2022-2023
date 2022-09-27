@@ -23,3 +23,20 @@ function imprimeArray($array){
 
 $c = array ('a' => 10, 'b' => 20, 'cee' => 30);
 imprimeArray($c);
+echo count($c)."<br>";
+
+$nombres = ["Jairo","Marcos","Mario"];
+
+//Bucle for
+for ($i = 0; $i < count($nombres); $i++){
+    echo $nombres[$i]."<br>";
+}
+
+//Bucle foreach
+foreach ($nombres as $nombre){
+    echo $nombre."<br>";
+}
+
+foreach ($nombres as $indice => $nombre){
+    echo $indice.": ".$nombre."<br>";
+}
