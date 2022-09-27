@@ -41,5 +41,23 @@ for ($i = 0; $i < 500; $i++){
         <p>
             <?php echo "Mi cumpleaños es el ". $anyo[6][15] ?>
         </p>
+        <h1>Ejercicio propuesto 2</h1>
+        <p>
+            Crea una función que muestre en pantalla una tabla con el contenido del array superglobal de PHP $_SERVER,
+            incluyendo el significado de cada índice.
+        </p>
+        <hr>
+        <table>
+            <tr>
+                <th>Índice</th>
+                <th>Valor</th>
+            </tr>
+            <?php foreach ($_SERVER as $indice => $valor){ ?>
+                <tr>
+                    <td><?php echo $indice ?></td>
+                    <td><?php echo $valor ?></td>
+                </tr>
+            <?php } ?>
+        </table>
     </body>
 </html>
