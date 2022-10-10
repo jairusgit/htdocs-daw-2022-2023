@@ -40,3 +40,85 @@ foreach ($nombres as $nombre){
 foreach ($nombres as $indice => $nombre){
     echo $indice.": ".$nombre."<br>";
 }
+
+//Ordenación
+
+/********************  ORDENACIÓN CON SORT ***************************/
+$a = array ('a' => 'textoc', 'b' => 'textoa', 'c' => 'textob');
+
+sort($a);
+var_dump($a);
+
+/*El resultado será:
+  array(3) {
+  [0] => string(6) "textoa"
+  [1]=> string(6) "textob"
+  [2]=> string(6) "textoc"
+  }
+*/
+
+/********************  ORDENACIÓN CON ASORT ***************************/
+$a = array ('a' => 'textoc', 'b' => 'textoa', 'c' => 'textob');
+
+asort($a);
+var_dump($a);
+
+/*El resultado será:
+  array(3) {
+  ['b'] => string(6) "textoa"
+  ['c']=> string(6) "textob"
+  ['a']=> string(6) "textoc"
+  }
+*/
+
+/********************  ORDENACIÓN CON   MULTISORT ***************************/
+
+//Array asociativo de Personas
+$personas = [
+    [
+        'nombre' => 'Jairo',
+        'apellido' => 'García',
+        'edad' => 47
+    ],
+    [
+        'nombre' => 'Juan',
+        'apellido' => 'Palomo',
+        'edad' => 22
+    ],
+    [
+        'nombre' => 'Luís',
+        'apellido' => 'Andrade',
+        'edad' => 54
+    ],
+    [
+        'nombre' => 'Alberto',
+        'apellido' => 'Pérez',
+        'edad' => 18
+    ],
+    [
+        'nombre' => 'Miguel',
+        'apellido' => 'Yuste',
+        'edad' => 36
+    ]
+];
+
+//Ordena array de personas por nombre ascendente
+foreach ($personas as $key => $row){
+    $nombres[$key] = $row['nombre']; //Obtengo array de nombres con los índices originales
+}
+array_multisort($nombres, SORT_ASC, $personas);
+imprimeArray($personas);
+
+//Ordena array de personas por apellido ascendente
+foreach ($personas as $key => $row){
+    $apellidos[$key] = $row['apellido']; //Obtengo array de apellidos con los índices originales
+}
+array_multisort($apellidos, SORT_ASC, $personas);
+imprimeArray($personas);
+
+//Ordena array de personas por edad descendente
+foreach ($personas as $key => $row){
+    $edades[$key] = $row['edad']; //Obtengo array de edades con los índices originales
+}
+array_multisort($edades, SORT_DESC, $personas);
+imprimeArray($personas);

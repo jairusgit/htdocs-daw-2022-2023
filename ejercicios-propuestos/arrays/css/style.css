@@ -22,3 +22,20 @@ input[type=submit]{
 div{
     margin-top: 20px;
 }
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.center{
+    text-align: center;
+}
+
+.productos th,
+.productos td{
+    width: 120px;
+}
