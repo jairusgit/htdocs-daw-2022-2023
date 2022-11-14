@@ -1,0 +1,27 @@
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: aliceblue;
+    font-family: "Arial", sans-serif;
+}
+
+ul{
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+}
+
+li{
+    display: inline-block;
+    width: 150px;
+}
+
+/* Para las ul que lleven la clase titulo */
+ul.titulo{
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+img{
+    width: 80%;
+}
