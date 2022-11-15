@@ -5,7 +5,7 @@ session_start();
 $accion = filter_input(INPUT_GET, 'accion', FILTER_SANITIZE_SPECIAL_CHARS);
 $indice = filter_input(INPUT_GET,'indice',FILTER_SANITIZE_NUMBER_INT);
 
-if ($accion == 'eliminar' && $indice){
+if ($accion == 'eliminar' && $indice > -1){
     //Borro ese elemento del array
     unset($_SESSION['perros'][$indice]);
 }
@@ -19,7 +19,7 @@ if ($accion == 'restaurar'){
 if (!isset($_SESSION['perros'])){
 
     $_SESSION['perros'] = [
-        1 => ['nombre' => 'Curro', 'raza' => 'Chucho', 'dueño' => 'Jairo', 'edad' => 10, 'imagen' => 'perro1.png'],
+        ['nombre' => 'Curro', 'raza' => 'Chucho', 'dueño' => 'Jairo', 'edad' => 10, 'imagen' => 'perro1.png'],
         ['nombre' => 'Toby', 'raza' => 'Pastor Alemán', 'dueño' => 'María', 'edad' => 5, 'imagen' => 'perro2.png'],
         ['nombre' => 'Chispa', 'raza' => 'Caniche', 'dueño' => 'Andrea', 'edad' => 3, 'imagen' => 'perro3.png'],
     ];
